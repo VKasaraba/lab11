@@ -12,13 +12,17 @@ class LifeInsurance(AbstractInsurance):
         self.number_of_dependents = number_of_dependents
 
     def __del__(self):
-        print('Destructor called, life_insurance deleted.')
+        pass
 
     def __str__(self):
-        return super().__str__() + " emergency_savings= " + str(
+        return super().__str__() + " insurance_type= " + str(self.__insurance_type) + " emergency_savings= " + str(
             self.emergency_savings) + " number_of_dependents= " + str(
             self.number_of_dependents) + " risk_level= " + str(
             self.get_risk_level())
+
+    def __repr__(self):
+        return "customer_payment_uah= " + str(self.customer_payment_uah) + " insurance_type= " + str(
+            self.__insurance_type) + " risk_level= " + str(self.get_risk_level())
 
     def get_risk_level(self):
         risk_level = self.number_of_dependents * 0.5

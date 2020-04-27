@@ -12,11 +12,15 @@ class HealthInsurance(AbstractInsurance):
         self.immunity_level = immunity_level
 
     def __del__(self):
-        print('Destructor called, health_insurance deleted.')
+        pass
 
     def __str__(self):
-        return super().__str__() + " immunity_level = " + str(self.immunity_level) + " risk_level= " + str(
-            self.get_risk_level())
+        return super().__str__() + " insurance_type= " + str(self.__insurance_type) + " immunity_level = " + str(
+            self.immunity_level) + " risk_level= " + str(self.get_risk_level())
+
+    def __repr__(self):
+        return "customer_payment_uah= " + str(self.customer_payment_uah) + " insurance_type= " + str(
+            self.__insurance_type) + " risk_level= " + str(self.get_risk_level())
 
     def get_risk_level(self):
         if self.immunity_level == ImmunityLevel.HIGH:

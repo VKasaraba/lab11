@@ -11,7 +11,7 @@ class AbstractInsurance(ABC):
         self.client = client
 
     def __str__(self):
-        return " duration_in_years= " + str(self.duration_in_years) + " compensation= " + str(
+        return "duration_in_years= " + str(self.duration_in_years) + " compensation= " + str(
             self.compensation) + " customer_payment_uah= " + str(self.customer_payment_uah) + " client= " + str(
             self.client)
 

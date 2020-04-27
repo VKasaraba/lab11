@@ -15,14 +15,18 @@ class PropertyInsurance(AbstractInsurance):
         self.danger_type = danger_type
 
     def __del__(self):
-        print('Destructor called, property_insurance deleted.')
+        pass
 
     def __str__(self):
-        return super().__str__() + " address= " + str(
+        return str(__name__) + super().__str__() + " insurance_type= " + str(self.__insurance_type) + " address= " + str(
             self.address) + " property_value_in_uan= " + str(
             self.property_value_in_uan) + " accidents_for_twenty_years= " + str(
             self.accidents_for_twenty_years) + " danger_type= " + str(self.danger_type) + " risk_level= " + str(
             self.get_risk_level())
+
+    def __repr__(self):
+        return "customer_payment_uah= " + str(self.customer_payment_uah) + " insurance_type= " + str(
+            self.__insurance_type) + " risk_level= " + str(self.get_risk_level())
 
     def get_risk_level(self):
         risk_level = self.accidents_for_twenty_years * 0.5

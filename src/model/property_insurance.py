@@ -1,9 +1,9 @@
-from src.model.abstract_insurance import AbstractInsurance
+from src.model.abstract_insurance import LifeInsurance
 from src.model.danger_type import DangerType
 from src.model.insurance_type import InsuranceType
 
 
-class PropertyInsurance(AbstractInsurance):
+class PropertyInsurance(LifeInsurance):
     __insurance_type = InsuranceType.PropertyInsurance
 
     def __init__(self, duration_in_years=0, compensation=0, customer_payment_uah=0, client=None, address=None,

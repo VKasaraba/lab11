@@ -1,9 +1,9 @@
-from src.model.abstract_insurance import AbstractInsurance
+from src.model.abstract_insurance import LifeInsurance
 from src.model.immunity_level import ImmunityLevel
 from src.model.insurance_type import InsuranceType
 
 
-class HealthInsurance(AbstractInsurance):
+class HealthInsurance(LifeInsurance):
     __insurance_type = InsuranceType.HealthInsurance
 
     def __init__(self, duration_in_years=0, compensation=0, customer_payment_uah=0, client=None,

@@ -1,8 +1,8 @@
-from src.model.abstract_insurance import AbstractInsurance
+from src.model.abstract_insurance import LifeInsurance
 from src.model.insurance_type import InsuranceType
 
 
-class LifeInsurance(AbstractInsurance):
+class LifeInsurance(LifeInsurance):
     __insurance_type = InsuranceType.LifeInsurance
 
     def __init__(self, duration_in_years=0, compensation=0, customer_payment_uah=0, client=None, emergency_savings=0,

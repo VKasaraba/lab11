@@ -3,7 +3,7 @@ import doctest
 from src.manager.insurance_manager import InsuranceManager
 from src.model.danger_type import DangerType
 from src.model.immunity_level import ImmunityLevel
-from src.model.abstract_insurance import AbstractInsurance
+from src.model.abstract_insurance import LifeInsurance
 from src.model.health_insurance import HealthInsurance
 from src.model.insurance_type import InsuranceType
 from src.model.life_insurance import LifeInsurance
@@ -51,4 +51,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-doctest.testmod(verbose=True, extraglobs={'obj': AbstractInsurance()})
+doctest.testmod(verbose=True, extraglobs={'obj': LifeInsurance()})

@@ -18,7 +18,7 @@ class InsuranceManagerUtils:
     @staticmethod
     def sort_by_risk_level(insurances, sort_type: SortType):
         """
-        returns a sorted list of insurances with given
+        returns a sorted list of insurances with given risk_level
 
         >>> InsuranceManagerUtils.sort_by_risk_level(insurances, SortType.ASCENDING)
         [customer_payment_uah= 20 insurance_type= InsuranceType.HealthInsurance risk_level= 0.1, \

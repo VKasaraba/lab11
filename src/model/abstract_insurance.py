@@ -2,7 +2,7 @@ from typing import Any
 from abc import ABC, abstractmethod
 
 
-class AbstractInsurance(ABC):
+class LifeInsurance:
 
     def __init__(self, duration_in_years=0, compensation=0, customer_payment_uah=0, client=None):
         self.duration_in_years = duration_in_years
@@ -17,7 +17,7 @@ class AbstractInsurance(ABC):
 
     def __del__(self):
         print('Destructor called, insurance deleted.')
-
+        """ 
     @abstractmethod
     def get_risk_level(self):
         raise NotImplementedError
@@ -25,3 +25,4 @@ class AbstractInsurance(ABC):
     @abstractmethod
     def insurance_type(self):
         raise NotImplementedError
+        """

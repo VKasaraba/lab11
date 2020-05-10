@@ -1,7 +1,7 @@
 import doctest
 from typing import List
 from src.model.insurance_type import InsuranceType
-from src.model.abstract_insurance import AbstractInsurance
+from src.model.abstract_insurance import LifeInsurance
 from src.model.danger_type import DangerType
 from src.model.health_insurance import HealthInsurance
 from src.model.immunity_level import ImmunityLevel
@@ -25,7 +25,7 @@ class InsuranceManager:
         [customer_payment_uah= 31 insurance_type= InsuranceType.HealthInsurance risk_level= 1.1, \
 customer_payment_uah= 30 insurance_type= InsuranceType.PropertyInsurance risk_level= 1.1]
         """
-        found_insurances: List[AbstractInsurance] = []
+        found_insurances: List[LifeInsurance] = []
         for insurance in self.insurances:
             if insurance.get_risk_level() == expected_risk_level:
                 found_insurances.append(insurance)
@@ -40,7 +40,7 @@ customer_payment_uah= 30 insurance_type= InsuranceType.PropertyInsurance risk_le
 customer_payment_uah= 30 insurance_type= InsuranceType.PropertyInsurance risk_level= 5.5]
 
         """
-        found_insurances: List[AbstractInsurance] = []
+        found_insurances: List[LifeInsurance] = []
         for insurance in self.insurances:
             if insurance.insurance_type == expected_insurance_type:
                 found_insurances.append(insurance)
@@ -55,7 +55,7 @@ customer_payment_uah= 30 insurance_type= InsuranceType.PropertyInsurance risk_le
 customer_payment_uah= 30 insurance_type= InsuranceType.PropertyInsurance risk_level= 1.1, \
 customer_payment_uah= 30 insurance_type= InsuranceType.PropertyInsurance risk_level= 5.5]
         """
-        found_insurances: List[AbstractInsurance] = []
+        found_insurances: List[LifeInsurance] = []
         for insurance in self.insurances:
             if insurance.customer_payment_uah == expected_customer_payment:
                 found_insurances.append(insurance)
@@ -80,6 +80,6 @@ if __name__ == '__main__':
 
     insurances = [first_health_insurance, second_health_insurance, first_life_insurance, second_life_insurance,
                   first_property_insurance, second_property_insurance]
-
+    my_dict = {"one":1, "two":2}
     doctest.testmod(verbose=True, extraglobs={"manager": InsuranceManager(insurances)})
 
